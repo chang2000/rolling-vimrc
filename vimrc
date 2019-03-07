@@ -1,28 +1,27 @@
-" use Vundle to manage my vim package
+" use Plug to manage my vim package
 "
 set nocompatible              " required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-Plugin 'scrooloose/nerdtree'  
-
+call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdtree'  
 "Python 优化
-Plugin 'vim-scripts/indentpython.vim'
+Plug 'vim-scripts/indentpython.vim'
 "显示缩进线
-Plugin 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine'
 
 "括号自动补全
-Plugin 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 " 多行注释
-Plugin 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter'
 
-" 为了美观
-Plugin 'jakwings/vim-colors'        
+"" 为了美观, 所有的色彩插件位于该目录下
+Plug 'jakwings/vim-colors'        
 
-call vundle#end()            " required
+call plug#end()
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+set termencoding=utf-8
+set encoding=utf-8
 
 
 filetype plugin indent on  " Load plugins according to detected filetype.
