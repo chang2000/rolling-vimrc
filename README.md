@@ -17,8 +17,8 @@
 * identPython， 针对Python lang. 的缩进优化（pep8）
 * [identLine](https://github.com/Yggdroot/indentLine), 显示缩进线
 * [nerdCommenter](https://github.com/scrooloose/nerdcommenter), 多行注释。在Visual mode下选中使用<leader> + <cm>进行注释。
-* [vim-colors](https://github/jakwings/vim-colors), 色彩管理工具
-* [YCM](https://github/Valloric/YouCompleteMe),史诗级vim自动补全工具。安装较麻烦，环境很难处理，看情况出教程。
+* [vim-colors](https://github.com/jakwings/vim-colors), 色彩管理工具
+* [YCM](https://github.com/Valloric/YouCompleteMe),史诗级vim自动补全工具。安装较麻烦，环境很难处理，看情况出教程。
 
  
 
