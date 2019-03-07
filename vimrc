@@ -57,6 +57,7 @@ set wrapscan               " Searches wrap around end-of-file.
 set report      =0         " Always report changed lines.
 set synmaxcol   =200       " Only highlight the first 200 columns.
 
+let mapleader="\<Space>"
 "set list                   " Show non-printable characters.
 "if has('multi_byte') && &encoding ==# 'utf-8'
 "  let &listchars = 'tab:▸ ,extends:❯,precedes:❮,nbsp:±'
@@ -64,9 +65,6 @@ set synmaxcol   =200       " Only highlight the first 200 columns.
 "  let &listchars = 'tab:> ,extends:>,precedes:<,nbsp:.'
 "endif
 
-"about the leader key, set SPACE to be the leader key
-let mapleader = ' '
-nnoremap <leader>h :helpgrep<space>
 
 "--------------------Nerd-Tree----------------
 " 显示行号
@@ -83,7 +81,7 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 "退出vim时自动关闭nerd-tree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " toggle nerd tree
-map <leader>nn :NERDTreeToggle<CR>
+nmap <leader>nn :NERDTreeToggle<CR>
 
 "--------------show-indent-line-------------
 "identLine默认是关闭的，因此需要在.vimrc中配置才能看到效果：
@@ -96,14 +94,13 @@ let g:indentLine_enabled = 1
 
 "--------------nerd-commenter---多行注释-------
 " nerdcommenter默认热键<leader>为'\'，这里将热键设置为','
-let mapleader=' '
 
 " 设置注释快捷键
 map <leader>cm  <leader>ci<CR>
 
 "-----------------color------------------
-set t_Co=256 " required
-colorscheme moody 
+set t_Co=256 
+colorscheme darkburn 
 
 "-----------------GUI-Setting____________-
-set guifont=Meslo\ LG\ S\ DZ\ Regular\ for\ Powerline:h15
+set guifont=eslo\ LG\ S\ DZ\ Regular\ for\ Powerline:h15
