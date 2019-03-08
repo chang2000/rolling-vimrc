@@ -19,6 +19,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'jakwings/vim-colors'        
 "YCM!!!!!!!!!!!!!!!!!!!!
 Plug 'Valloric/YouCompleteMe'
+
 call plug#end()
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 set termencoding=utf-8
@@ -39,7 +40,7 @@ set backspace   =indent,eol,start  " Make backspace work as you would expect.
 set hidden                 " Switch between buffers without having to save first.
 set laststatus  =2         " Always show statusline.
 set display     =lastline  " Show as much as possible of the last line.
-
+set ruler
 set showmode               " Show current mode in command-line.
 set showcmd                " Show already typed keys when more are expected.
 set mouse=a
@@ -87,7 +88,6 @@ nmap <leader>nn :NERDTreeToggle<CR>
 "identLine默认是关闭的，因此需要在.vimrc中配置才能看到效果：
 " 支持任意ASCII码，也可以使用特殊字符：¦, ┆, or │ ，但只在utf-8编码下有效
 let g:indentLine_char='¦'   
-
 " 使indentline生效
 let g:indentLine_enabled = 1
 
@@ -100,7 +100,7 @@ map <leader>cm  <leader>ci<CR>
 
 "-----------------color------------------
 set t_Co=256 
-colorscheme darkburn 
+colorscheme gruvbox 
 "
 "-------------------------ycm------------------
 "
@@ -136,7 +136,29 @@ let g:ycm_complete_in_comments = 1
 let g:ycm_complete_in_strings = 1
 "注释和字符串中的文字也会被收入补全
 let g:ycm_collect_identifiers_from_comments_and_strings = 0
-
 "nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR> 
+"
+"
 ""-----------------GUI-Setting____________-
 set guifont=eslo\ LG\ S\ DZ\ Regular\ for\ Powerline:h15
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Quickly Run
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+map <leader>b :call CompileRunGcc()<CR>
+
+func! CompileRunGcc()
+    exec "w"
+    if &filetype == 'c'
+        exec '!g++ % -o %<'
+        exec '!time ./%<'
+    elseif &filetype == 'cpp'
+        exec '!g++ % -o %<'
+        exec '!time ./%<'
+    elseif &filetype == 'python'
+        exec '!time python3 %'
+    elseif &filetype == 'sh'
+        :!time bash %
+    endif 
+endfunc
