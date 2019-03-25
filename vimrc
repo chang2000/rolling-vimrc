@@ -22,6 +22,10 @@ Plug 'Valloric/YouCompleteMe'
 
 " vim-hardtime
 Plug 'takac/vim-hardtime'
+
+" vim tex plugin
+Plug 'lervag/vimtex'
+
 call plug#end()
 
 
@@ -93,7 +97,7 @@ let g:indentLine_enabled = 1
 
 
 "--------------nerd-commenter---多行注释-------
-" nerdcommenter默认热键<leader>为'\'，这里将热键设置为'SPACE'
+" nerdcommenter默认热键<leader>为'\'，这里热键设置为'SPACE'
 
 " 设置注释快捷键
 nmap <leader>cm  <leader>ci<CR>
@@ -117,7 +121,7 @@ inoremap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDow
 inoremap <expr> <PageUp> pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
 
 "youcompleteme 默认tab s-tab 和自动补全冲突
-"let g:ycm_key_list_select_completion=['<c-n>']
+let g:ycm_key_list_select_completion=['<c-n>']
 "let g:ycm_key_list_select_completion = ['<Down>']
 let g:ycm_key_list_previous_completion=['<c-p>']
 "let g:ycm_key_list_previous_completion = ['<Up>']
@@ -141,7 +145,7 @@ let g:ycm_collect_identifiers_from_comments_and_strings = 0
 "
 "
 ""-----------------GUI-Setting____________-
-set guifont=eslo\ LG\ S\ DZ\ Regular\ for\ Powerline:h15
+set guifont=Hack:h15
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Quickly Run
@@ -158,6 +162,8 @@ func! CompileRunGcc()
         exec '!time ./%<'
     elseif &filetype == 'python'
         exec '!time python3 %'
+    elseif &filetype == 'perl'
+        exec '!time perl %'
     elseif &filetype == 'sh'
         :!time bash %
     endif
@@ -174,3 +180,17 @@ let g:list_of_visual_keys = ["h", "j", "k", "l", "-", "+", "<UP>", "<DOWN>", "<L
 let g:list_of_insert_keys = ["<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
 let g:list_of_disabled_keys = []
 let g:hardtime_allow_different_key = 1
+
+
+"""""""""""""""""personal habit""""""""""""""""""""""""""""""""""""""""
+:command WQ wq
+:command Wq wq
+:command W w
+:command Q q
+
+"open file at the last position
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
