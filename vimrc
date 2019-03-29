@@ -25,7 +25,6 @@ Plug 'takac/vim-hardtime'
 
 " vim tex plugin
 Plug 'lervag/vimtex'
-
 call plug#end()
 
 
@@ -68,8 +67,22 @@ set synmaxcol   =200       " Only highlight the first 200 columns.
 
 let mapleader="\<Space>"
 "-------------优化命令-----------------
+vnoremap <Leader>y "+y
+" 让配置变更立即生效
+autocmd BufWritePost $MYVIMRC source $MYVIMRC
+" 禁止光标闪烁
+set gcr=a:block-blinkon0
+" 禁止显示滚动条
+set guioptions-=l
+set guioptions-=L
+set guioptions-=r
+set guioptions-=R
+" 禁止显示菜单和工具条
+set guioptions-=m
+set guioptions-=T"
 
-"
+
+
 "--------------------Nerd-Tree----------------
 " 显示行号
 let NERDTreeShowLineNumbers=1
@@ -104,7 +117,7 @@ nmap <leader>cm  <leader>ci<CR>
 
 "-----------------color------------------
 set t_Co=256 
-colorscheme gruvbox 
+colorscheme gruvbox
 
 "
 "-------------------------ycm------------------
@@ -121,7 +134,7 @@ inoremap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDow
 inoremap <expr> <PageUp> pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
 
 "youcompleteme 默认tab s-tab 和自动补全冲突
-let g:ycm_key_list_select_completion=['<c-n>']
+"1let g:ycm_key_list_select_completion=['<c-n>']
 "let g:ycm_key_list_select_completion = ['<Down>']
 let g:ycm_key_list_previous_completion=['<c-p>']
 "let g:ycm_key_list_previous_completion = ['<Up>']
@@ -145,7 +158,8 @@ let g:ycm_collect_identifiers_from_comments_and_strings = 0
 "
 "
 ""-----------------GUI-Setting____________-
-set guifont=Hack:h15
+set guifont=Courier:h20
+set linespace=6
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Quickly Run
@@ -161,9 +175,9 @@ func! CompileRunGcc()
         exec '!g++ % -o %<'
         exec '!time ./%<'
     elseif &filetype == 'python'
-        exec '!time python3 %'
+        exec '!python3 %'
     elseif &filetype == 'perl'
-        exec '!time perl %'
+        exec '!perl %'
     elseif &filetype == 'sh'
         :!time bash %
     endif
@@ -181,13 +195,14 @@ let g:list_of_insert_keys = ["<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
 let g:list_of_disabled_keys = []
 let g:hardtime_allow_different_key = 1
 
-
 """""""""""""""""personal habit""""""""""""""""""""""""""""""""""""""""
 :command WQ wq
 :command Wq wq
 :command W w
 :command Q q
-
+"""""""""""""""""Code Fold"""""""""""""""""
+set foldmethod=indent
+set foldlevelstart=99
 "open file at the last position
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
