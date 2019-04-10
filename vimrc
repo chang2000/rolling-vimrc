@@ -2,9 +2,9 @@
 "
 set nocompatible              " required
 filetype off                  " required
-
+au FIleType perl set filetype=prolog
 call plug#begin('~/.vim/plugged')
-Plug 'scrooloose/nerdtree'  
+Plug 'scrooloose/nerdtree'
 "Python 优化
 Plug 'vim-scripts/indentpython.vim'
 "显示缩进线
@@ -16,7 +16,10 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
 
 "" 为了美观, 所有的色彩插件位于该目录下
-Plug 'jakwings/vim-colors'        
+Plug 'jakwings/vim-colors'
+
+""""""""""Python syntax enhencement""""""""""
+Plug 'vim-python/python-syntax'
 "YCM!!!!!!!!!!!!!!!!!!!!
 Plug 'Valloric/YouCompleteMe'
 
@@ -79,7 +82,7 @@ set guioptions-=R
 " 禁止显示菜单和工具条
 set guioptions-=m
 set guioptions-=T"
-
+set background=dark
 
 
 "--------------------Nerd-Tree----------------
@@ -103,10 +106,9 @@ nmap <leader>nn :NERDTreeToggle<CR>
 "--------------show-indent-line-------------
 "identLine默认是关闭的，因此需要在.vimrc中配置才能看到效果：
 " 支持任意ASCII码，也可以使用特殊字符：¦, ┆, or │ ，但只在utf-8编码下有效
-let g:indentLine_char='¦'   
+let g:indentLine_char='¦'
 " 使indentline生效
 let g:indentLine_enabled = 1
-
 
 "--------------nerd-commenter---多行注释-------
 " nerdcommenter默认热键<leader>为'\'，这里热键设置为'SPACE'
@@ -115,13 +117,16 @@ let g:indentLine_enabled = 1
 nmap <leader>cm  <leader>ci<CR>
 
 "-----------------color------------------
-set t_Co=256 
+set t_Co=256
 colorscheme gruvbox
+"
+"Python Syntax Plus
+let g:python_highlight_all = 1
+let g:python_highlight_space_errors = 0
 
-"
-"-------------------------ycm------------------
-"
-"
+
+
+"""""""""""""""""""YouCompleteMe"""""""""""""""""""
 "" 自动补全配置
 set completeopt=longest,menu "让Vim的补全菜单行为与一般IDE一致(参考VimTip1228)
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif "离开插入模式后自动关闭预览窗口
@@ -153,11 +158,11 @@ let g:ycm_complete_in_comments = 1
 let g:ycm_complete_in_strings = 1
 "注释和字符串中的文字也会被收入补全
 let g:ycm_collect_identifiers_from_comments_and_strings = 0
-"nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR> 
+"nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 "
 "
 ""-----------------GUI-Setting____________-
-set guifont=Courier:h20
+set guifont=Hack:h18
 set linespace=6
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -177,12 +182,14 @@ func! CompileRunGcc()
         exec '!python3 %'
     elseif &filetype == 'perl'
         exec '!perl %'
+    elseif &filetype == 'tex'
+        exec '!xelatex %'
     elseif &filetype == 'sh'
         :!time bash %
     endif
 endfunc
 
-" vim-hard time 
+" vim-hard time
 let g:hardtime_default_on = 0
 let g:hardtime_ignore_buffer_patterns = [ "CustomPatt[ae]rn", "NERD.*" ]
 let g:hardtime_timeout = 100
@@ -199,12 +206,20 @@ let g:hardtime_allow_different_key = 1
 :command Wq wq
 :command W w
 :command Q q
-"""""""""""""""""Code Fold"""""""""""""""""
+:nmap <leader>y +"y
+"Remove trailing space before saving
+autocmd BufWritePre * %s/\s\+$//e
+""""""""""""""""Code Fold"""""""""""""""""
+
 set foldmethod=indent
 set foldlevelstart=99
+
 "open file at the last position
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""Vimtex setting""""""""""""""""""
+set conceallevel=1
+let g:tex_conceal='abdmg'
 
