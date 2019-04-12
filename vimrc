@@ -1,4 +1,10 @@
-" use Plug to manage my vim package
+"|\     /|\__   __/(       )(  ____ )(  ____ \
+"| )   ( |   ) (   | () () || (    )|| (    \/
+"| |   | |   | |   | || || || (____)|| |
+"( (   ) )   | |   | |(_)| ||     __)| |
+" \ \_/ /    | |   | |   | || (\ (   | |
+"  \   /  ___) (___| )   ( || ) \ \__| (____/\
+"   \_/   \_______/|/     \||/   \__/(_______/
 "
 set nocompatible              " required
 filetype off                  " required
@@ -18,7 +24,7 @@ Plug 'scrooloose/nerdcommenter'
 "" 为了美观, 所有的色彩插件位于该目录下
 Plug 'jakwings/vim-colors'
 
-""""""""""Python syntax enhencement""""""""""
+""""""""""PythonSyntaxEnhencement""""""""""
 Plug 'vim-python/python-syntax'
 "YCM!!!!!!!!!!!!!!!!!!!!
 Plug 'Valloric/YouCompleteMe'
@@ -159,6 +165,7 @@ let g:ycm_complete_in_strings = 1
 "注释和字符串中的文字也会被收入补全
 let g:ycm_collect_identifiers_from_comments_and_strings = 0
 "nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:ycm_global_ycm_extra_conf = 'path to .ycm_extra_conf.py'
 "
 "
 ""-----------------GUI-Setting____________-
