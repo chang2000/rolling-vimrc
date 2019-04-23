@@ -11,17 +11,17 @@ filetype off                  " required
 au FIleType perl set filetype=prolog
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
-"Python 优化
+"Python indent enhancement
 Plug 'vim-scripts/indentpython.vim'
-"显示缩进线
+"Show the indent line
 Plug 'Yggdroot/indentLine'
 
-"括号自动补全
+"Auto pair
 Plug 'jiangmiao/auto-pairs'
-" 多行注释
+"Comment enhancement
 Plug 'scrooloose/nerdcommenter'
 
-"" 为了美观, 所有的色彩插件位于该目录下
+"All the color schemes located here
 Plug 'jakwings/vim-colors'
 
 """"""""""PythonSyntaxEnhencement""""""""""
@@ -74,25 +74,25 @@ set report      =0         " Always report changed lines.
 set synmaxcol   =200       " Only highlight the first 200 columns.
 
 let mapleader="\<Space>"
-"-------------优化命令-----------------
+"-------------Improve the copy&paste-----------------
 vnoremap <Leader>y "+y
-" 让配置变更立即生效
+" enable the modification in vimrc in real-time
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
-" 禁止光标闪烁
+" turn off the cursor blink
 set gcr=a:block-blinkon0
-" 禁止显示滚动条
+" trun if the scrollbar
 set guioptions-=l
 set guioptions-=L
 set guioptions-=r
 set guioptions-=R
-" 禁止显示菜单和工具条
+" turn of the toolbar and meau bar
 set guioptions-=m
 set guioptions-=T"
 set background=dark
 
 
 "--------------------Nerd-Tree----------------
-" 显示行号
+" show number
 let NERDTreeShowLineNumbers=1
 let NERDTreeAutoCenter=1
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
@@ -100,31 +100,22 @@ let NERDTreeWinSize=25
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 
-" 打开vim时自动打开NERDTree(暂时不使用)
-"autocmd vimenter * NERDTree
-
-"退出vim时自动关闭nerd-tree
+" quit nerd tree when quiting the last buffer
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " toggle nerd tree
 nmap <leader>nn :NERDTreeToggle<CR>
 
 "--------------show-indent-line-------------
-"identLine默认是关闭的，因此需要在.vimrc中配置才能看到效果：
-" 支持任意ASCII码，也可以使用特殊字符：¦, ┆, or │ ，但只在utf-8编码下有效
 let g:indentLine_char='¦'
-" 使indentline生效
 let g:indentLine_enabled = 1
 
-"--------------nerd-commenter---多行注释-------
-" nerdcommenter默认热键<leader>为'\'，这里热键设置为'SPACE'
-
-" 设置注释快捷键
+"--------------nerd-commenter----------
 nmap <leader>cm  <leader>ci<CR>
 
 "-----------------color------------------
 set t_Co=256
-colorscheme gruvbox
+colorscheme darkburn
 "
 "Python Syntax Plus
 let g:python_highlight_all = 1
