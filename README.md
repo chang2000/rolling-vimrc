@@ -1,14 +1,14 @@
 #  Vim Config build from scratch
 
-
-
 > 如果全世界的程序员能将折腾编辑器的时间减少一半，...
 >
 > If all the programmers can spend less time playing with editors...
 
 ## Introduction: 
 删掉原来vim仓库开这个新的vim仓库的初衷很复杂。核心原因还是想让自己对一个编辑器的构成有更加全面的了解。
+
 这个仓库力求做到，每一个功能都有其存在的意义，一点不多一点不少，脉络清晰。
+
 可能会在以后尝试模块化配置文件，也许也是必须要干的事情。
 
 The reasons that I delete my original vim configuration and start a new one is complex. The core reason is that I want to have a full understanding of the structure of an editor.
@@ -19,7 +19,7 @@ I will try to make it modulated later, and it's necessary for better management.
 
 ## Architecture & Plugins:
 
-I use [vim-plug](https://github.com/junegunn/vim-plug) to manage pulgiuns. The plugins I am using up to now:
+I use [vim-plug](https://github.com/junegunn/vim-plug) to manage pulgins. The plugins I am using up to now:
 
 * [nerdTree](https://github.com/scrooloose/nerdtree), a file manager for vim
 
