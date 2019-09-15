@@ -40,7 +40,7 @@ I use [vim-plug](https://github.com/junegunn/vim-plug) to manage pulgins. The pl
 
 ## Tips:
 
-The main configuration file is actually `~/.vim/vimrc`, thus you'd better delete the `.vimrc` in in your home dictionary. Or, to make it more safe, create a `vimrc` with only online
+The main configuration file is actually `~/.vim/vimrc`, thus you'd better delete the `.vimrc` in in your home dictionary. Or, to make it more safe, create a `vimrc` with only one line
 ```bash
 source ~/.vim/virmc
 ```
