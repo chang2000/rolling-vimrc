@@ -10,14 +10,12 @@ set nocompatible              " required
 filetype off                  " required
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
-Plug 'vim-scripts/indentpython.vim'
 Plug 'Yggdroot/indentLine'
-"Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
-Plug 'jakwings/vim-colors'
 Plug 'vim-python/python-syntax'
 Plug 'Valloric/YouCompleteMe'
 Plug 'rakr/vim-one'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 set fileencodings=utf-8
@@ -95,10 +93,6 @@ endif
 set t_Co=256
 colorscheme gruvbox
 "colorscheme one
-"colorscheme garden
-"colorscheme darkburn
-"colorscheme messy
-"colorscheme moody
 "colorscheme onedark
 "set background=light
 set background=dark
@@ -130,9 +124,11 @@ func! CompileRunGcc()
     if &filetype == 'c'
         exec '!gcc % -o %<'
         exec '!time ./%<'
+        exec '!trash %<'
     elseif &filetype == 'cpp'
         exec '!g++ % -o %<'
         exec '!time ./%<'
+        exec '!rm %'
     elseif &filetype == 'python'
         exec '!python3 %'
     "elseif &filetype == 'perl'
@@ -140,6 +136,20 @@ func! CompileRunGcc()
     elseif &filetype == 'tex'
         exec '!xelatex %'
     :endif
+""""""""""""YouCompleteMe""""""""""""""""
+let g:ycm_filetype_blacklist = {
+      \ 'tagbar' : 1,
+      \ 'nerdtree' : 1,
+      \}
+let g:ycm_cache_omnifunc=0
+" 开启语义补全
+let g:ycm_seed_identifiers_with_syntax=1
+"在注释输入中也能补全
+let g:ycm_complete_in_comments = 1
+"在字符串输入中也能补全
+"
+let ycm_confirm_extra_conf = 1
+"防止c 语言补全错误问题
 
 """"""""""""""""Code Fold"""""""""""""""""
 

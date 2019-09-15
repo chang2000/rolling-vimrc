@@ -4,7 +4,7 @@
 >
 > If all the programmers can spend less time playing with editors...
 
-## Introduction: 
+## Introduction:
 删掉原来vim仓库开这个新的vim仓库的初衷很复杂。核心原因还是想让自己对一个编辑器的构成有更加全面的了解。
 
 这个仓库力求做到，每一个功能都有其存在的意义，一点不多一点不少，脉络清晰。
@@ -13,7 +13,7 @@
 
 The reasons that I delete my original vim configuration and start a new one is complex. The core reason is that I want to have a full understanding of the structure of an editor.
 
-This repository is devote to customize an editor, that every function in it, just like autocomplete, highlight, snippets, has it's meaning and is the most suitable for me. This idea is inspired by [Use Vim as IDE](https://github.com/yangyangwithgnu/use_vim_as_ide).
+This repository is devoted to customize an editor, that every function in it, just like autocomplete, highlight, snippets, has it's meaning and is the most suitable for me. This idea is inspired by [Use Vim as IDE](https://github.com/yangyangwithgnu/use_vim_as_ide).
 
 I will try to make it modulated later, and it's necessary for better management.
 
@@ -36,8 +36,22 @@ I use [vim-plug](https://github.com/junegunn/vim-plug) to manage pulgins. The pl
 * [Vimtex](https://github.com/lervag/vimtex), LaTeX enhancement for LaTeX and Markdown
 
 
-continued...
+* To Be continued...
 
- 
+## Tips:
 
- 
+The main configuration file is actually `~/.vim/vimrc`, thus you'd better delete the `.vimrc` in in your home dictionary. Or, to make it more safe, create a `vimrc` with only online
+```bash
+source ~/.vim/virmc
+```
+
+
+
+## Some Loooooonglasting Issuse with this configuration:
+
+* Color Display
+
+  Some scripts has been added to `vimrc` to ensure the emulator to show the true color of your pretty color scheme.
+
+* to be continued...
+
