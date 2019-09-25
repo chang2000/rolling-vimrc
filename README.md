@@ -49,7 +49,7 @@ source ~/.vim/virmc
 
 
 
-## Some Loooooonglasting Issuse with this configuration:
+## Some Loooooonglasting Issues with this configuration:
 
 * Color Display
 
