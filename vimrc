@@ -68,7 +68,8 @@ set cursorline             " Find the current line quickly.
             :command Wq wq
             :command W w
             :command Q q
-            vmap <leader>y "+y
+
+            map <leader>y "+y
             map <leader>w :w<CR>
 
 "Remove trailing space before saving
