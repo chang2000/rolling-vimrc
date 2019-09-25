@@ -31,7 +31,9 @@ I use [vim-plug](https://github.com/junegunn/vim-plug) to manage pulgins. The pl
 
 * [vim-colors](https://github.com/jakwings/vim-colors), manage the color schemes
 
-* [YCM](https://github.com/Valloric/YouCompleteMe), historic autocomplete plugins. I will show you the full installation later.
+* ~~[YCM](https://github.com/Valloric/YouCompleteMe), historic autocomplete plugins. I will show you the full installation later.~~
+
+> YCM is highly demanding for users to learn. [coc](https://github.com/neoclide/coc.nvim) has easier installation and better default, which will save your life.
 
 * [Vimtex](https://github.com/lervag/vimtex), LaTeX enhancement for LaTeX and Markdown
 
