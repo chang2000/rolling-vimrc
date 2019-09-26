@@ -11,38 +11,62 @@
 
 可能会在以后尝试模块化配置文件，也许也是必须要干的事情。
 
-The reasons that I delete my original vim configuration and start a new one is complex. The core reason is that I want to have a full understanding of the structure of an editor.
+The reasons why I decided to start a new configuration from scratch is complex. The core reason is that I want to have a full understanding of the structure and every functions of an editor.
 
-This repository is devoted to customize an editor, that every function in it, just like autocomplete, highlight, snippets, has it's meaning and is the most suitable for me. This idea is inspired by [Use Vim as IDE](https://github.com/yangyangwithgnu/use_vim_as_ide).
+This repository is devoted to customize an editor, which every function in it, like autocomplete, highlight, snippets, is the best solution for me. And I know exactly why I introduce them to my configuratoin. It is inspired by [Use Vim as IDE](https://github.com/yangyangwithgnu/use_vim_as_ide).
 
-I will try to make it modulated later, and it's necessary for better management.
+I will try to make it modulated later if I get some free time, and it's necessary for better management.
 
 ## Architecture & Plugins:
 
-I use [vim-plug](https://github.com/junegunn/vim-plug) to manage pulgins. The plugins I am using up to now:
+I use [vim-plug](https://github.com/junegunn/vim-plug) to manage pulgins(Vundle, another package manager, is kinda old and slow). Plugins I recommand:
 
 * [nerdTree](https://github.com/scrooloose/nerdtree), a file manager for vim
-
-* identPython, indent enhancement for Python
 
 * [identLine](https://github.com/Yggdroot/indentLine), show the indent line
 
 * [nerdCommenter](https://github.com/scrooloose/nerdcommenter), comment code easily
 
-* [vim-colors](https://github.com/jakwings/vim-colors), manage the color schemes
+~~* [vim-colors](https://github.com/jakwings/vim-colors), manage the color schemes~~
+  > I started to use separate color-scheme plugins. Like Gruvbox, One and challenger_deep, refer to vimrc for details.
 
 * ~~[YCM](https://github.com/Valloric/YouCompleteMe), historic autocomplete plugins. I will show you the full installation later.~~
 
-> YCM is highly demanding for users to learn. [coc](https://github.com/neoclide/coc.nvim) has easier installation and better default, which will save your life.
+  > YCM is highly demanding for users to learn. [coc.nvim](https://github.com/neoclide/coc.nvim) has easier installation and better default, which will save your life.
 
-* [Vimtex](https://github.com/lervag/vimtex), LaTeX enhancement for LaTeX and Markdown
-
+* ~~[Vimtex](https://github.com/lervag/vimtex), LaTeX enhancement for LaTeX and Markdown~~
+  > Editing LaTeX in Emacs or VS Code Now
+  
+* [goyo](https://github.com/junegunn/goyo.vim), 🌷 Distraction-free writing in Vim
 
 * To Be continued...
 
+## Features & Some vimscript
+* QuickRun Support
+
+``` vim
+" Quick Run
+            map <leader>r :call CompileRun()<CR> " Space + R to run code immediately
+            func! CompileRun()
+                exec "w"
+                if &filetype == 'c'
+                    exec '!gcc % -o %<'
+                    exec '!time ./%<'
+                    exec '!rm %<'
+                elseif &filetype == 'cpp'
+                    exec '!g++ % -o %<'
+                    exec '!time ./%<'
+                    exec '!rm %'
+                elseif &filetype == 'python'
+                    exec '!python3 %'
+                elseif &filetype == 'tex'
+                    exec '!xelatex %'
+                :endif
+
+```
 ## Tips:
 
-The main configuration file is actually `~/.vim/vimrc`, thus you'd better delete the `.vimrc` in in your home dictionary. Or, to make it more safe, create a `vimrc` with only one line
+The main configuration file is actually `~/.vim/vimrc`, thus you'd better delete the `.vimrc` in in your home dictionary. Or, to make it safe, create a `vimrc` with only one line
 ```bash
 source ~/.vim/virmc
 ```
@@ -54,6 +78,10 @@ source ~/.vim/virmc
 * Color Display
 
   Some scripts has been added to `vimrc` to ensure the emulator to show the true color of your pretty color scheme.
-
+  
+* Autocomplete
+  
+  Actually Vim does have a build-in autocomplete function but need to use `<C-n> or <C-p>` to invoke. [SuperTab](https://github.com/ervandew/supertab) is recommanded and it allows you to use `<Tab>` to perform the completetion.
+  
 * to be continued...
 
