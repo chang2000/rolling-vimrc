@@ -152,14 +152,14 @@ set guioptions-=T"
 " coc Autocompletion
     inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
     inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-" Quickly Run
+" Quick Run
             map <leader>r :call CompileRun()<CR>
             func! CompileRun()
                 exec "w"
                 if &filetype == 'c'
                     exec '!gcc % -o %<'
                     exec '!time ./%<'
-                    exec '!trash %<'
+                    exec '!rm%<'
                 elseif &filetype == 'cpp'
                     exec '!g++ % -o %<'
                     exec '!time ./%<'
