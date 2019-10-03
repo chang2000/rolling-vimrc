@@ -175,6 +175,8 @@ set guioptions-=T"
                     exec '!python3 %'
                 elseif &filetype == 'tex'
                     exec '!xelatex %'
+                elseif &filetype == 'sh'
+                    exec '!./%'
                 :endif
             :endfunction
 
