@@ -1,3 +1,15 @@
+<h3 align="center">Rolling Vim Configuration</h3>
+<h4 align="center">Lightweighted, EASY to Deploy</h4>
+<hr/>
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Vimlogo.svg" />
+</p>
+
+<p align="center">
+<a href="https://github.com/chang2000/rolling-vimrc"><img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" alt="Maintenance"></a>
+<a href="https://www.gnu.org/licenses/gpl-3.0"><img src="https://img.shields.io/badge/License-GPL%20v3-blue.svg" alt="GPL License"></a>
+<a href="https://github.com/sindresorhus/awesome"><img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg" alt="Awesome"></a>
+</p>
 #  Vim Config build from scratch
 
 > 如果全世界的程序员能将折腾编辑器的时间减少一半，...
@@ -35,6 +47,7 @@ I use [vim-plug](https://github.com/junegunn/vim-plug) to manage pulgins(Vundle,
   > YCM is highly demanding for users to learn. [coc.nvim](https://github.com/neoclide/coc.nvim) has easier installation and better default, which will save your life.
 
 * ~~[Vimtex](https://github.com/lervag/vimtex), LaTeX enhancement for LaTeX and Markdown~~
+  
   > Editing LaTeX in Emacs or VS Code Now
   
 * [goyo](https://github.com/junegunn/goyo.vim), 🌷 Distraction-free writing in Vim

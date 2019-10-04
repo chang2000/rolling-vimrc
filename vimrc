@@ -26,6 +26,8 @@ call plug#begin('~/.vim/plugged')
         Plug 'vim-python/python-syntax'
         Plug 'junegunn/goyo.vim'
         "Plug 'ervandew/supertab'
+        "
+        Plug 'wakatime/vim-wakatime'
         Plug 'jiangmiao/auto-pairs'
         Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -51,13 +53,12 @@ set expandtab              " Use spaces instead of tabs.
 set softtabstop =4         " Tab key indents by 4 spaces.
 set shiftwidth  =4         "  indents by 4 spaces.
 set shiftround             "  indents to next multiple of 'shiftwidth'.
-set hidden                 " Switch between buffers without having to save first.
-set laststatus  =2         " Always show statusline.
 set display     =lastline  " Show as much as possible of the last line.
 "set ruler
 set showmode               " Show current mode in command-line.
+set laststatus  =2         " Always show statusline.
 set showcmd                " Show already typed keys when more are expected.
-set mouse=a
+set mouse=ac
 set incsearch              " Highlight while searching with / or ?.
 set splitbelow             " Open new windows below the current window.
 set splitright             " Open new windows right of the current window.
@@ -76,7 +77,12 @@ set cursorline             " Find the current line quickly.
             map <leader>w :w<CR>
 
 "Remove trailing space before saving
-autocmd BufWritePre * %s/\s\+$//e
+        autocmd BufWritePre * %s/\s\+$//e
+
+"open file at the lat position
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
 
 " Plugin settings
 "--------------------Nerd-Tree----------------
@@ -84,16 +90,13 @@ autocmd BufWritePre * %s/\s\+$//e
 let NERDTreeShowLineNumbers=1
 let NERDTreeAutoCenter=1
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
-let NERDTreeWinSize=25
+let NERDTreeWinSize=20
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 " quit nerd tree when quiting the last buffer
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-"open file at the la
-"t position
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-endif
+
+
 " toggle nerdtree
 nmap <leader>nn :NERDTreeToggle<CR>
 
@@ -106,9 +109,12 @@ nmap <leader>/  <leader>ci<CR>
 
 " Goyo
 nmap <leader>o :Goyo<CR>
-" colod
+
+
+
 " True color terminal support
-set t_Co=256
+"set t_Co=256
+set termguicolors
 
         if (empty($TMUX))
             if (has("nvim"))
@@ -118,24 +124,23 @@ set t_Co=256
                 set termguicolors
             endif
         endif
-
 "colorscheme gruvbox
 "colorscheme one
 "colorscheme challenger_deep
 colorscheme equinusocio_material
 "colorscheme nord
 "colorscheme dracula
-set background=dark
 "set background=light
+set background=dark
 
-" if you prefer the default one, comment out this line
-let g:equinusocio_material_style='darker'
-" comment out this line to make vertsplit invisible
-let g:equinusocio_material_vertsplit='visible'
-" this theme has a buildin lightline theme, you can turn it on
-let g:lightline = {
-    \ 'colorscheme': 'equinusocio_material',
-    \ }
+        " if you prefer the default one, comment out this line
+        let g:equinusocio_material_style='darker'
+        " comment out this line to make vertsplit invisible
+        let g:equinusocio_material_vertsplit='visible'
+        " this theme has a buildin lightline theme, you can turn it on
+        let g:lightline = {
+            \ 'colorscheme': 'equinusocio_material',
+            \ }
 
 
 "Python Syntax Plus
@@ -143,17 +148,17 @@ let g:python_highlight_all = 1
 let g:python_highlight_space_errors = 0
 
 "GUI setting
-set guifont=Input\ Mono:h16
-set linespace=6
-" turn off the cursor blink
-set gcr=a:block-blinkon0
-set guioptions-=l
-set guioptions-=L
-set guioptions-=r
-set guioptions-=R
-" turn of the toolbar and meau bar
-set guioptions-=m
-set guioptions-=T"
+        "set guifont=Menlo:h16
+        "set linespace=6
+        "turn off the cursor blink
+        "set gcr=a:block-blinkon0
+        "set guioptions-=l
+        "set guioptions-=L
+        "set guioptions-=r
+        "set guioptions-=R
+        "turn of the toolbar and meau bar
+        "set guioptions-=m
+        "set guioptions-=T"
 
 " coc Autocompletion
     inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
@@ -179,5 +184,3 @@ set guioptions-=T"
                     exec '!./%'
                 :endif
             :endfunction
-
-
