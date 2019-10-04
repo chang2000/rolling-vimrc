@@ -1,8 +1,8 @@
-<h3 align="center">Rolling Vim Configuration</h3>
+<h1 align="center" style="font-family:georgia">Rolling Vim Configuration</h1>
 <h4 align="center">Lightweighted, EASY to Deploy</h4>
 <hr/>
 <p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Vimlogo.svg" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Vimlogo.svg" width="250" height="250"/>
 </p>
 
 <p align="center">
@@ -10,7 +10,8 @@
 <a href="https://www.gnu.org/licenses/gpl-3.0"><img src="https://img.shields.io/badge/License-GPL%20v3-blue.svg" alt="GPL License"></a>
 <a href="https://github.com/sindresorhus/awesome"><img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg" alt="Awesome"></a>
 </p>
-#  Vim Config build from scratch
+
+
 
 > 如果全世界的程序员能将折腾编辑器的时间减少一半，...
 >
