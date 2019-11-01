@@ -27,6 +27,7 @@ call plug#begin('~/.vim/plugged')
         Plug 'junegunn/goyo.vim'
         "Plug 'ervandew/supertab'
         "
+        Plug 'vim-scripts/vim-auto-save'
         Plug 'octol/vim-cpp-enhanced-highlight'
         Plug 'wakatime/vim-wakatime'
         Plug 'jiangmiao/auto-pairs'
@@ -78,9 +79,9 @@ set splitright             " Open new windows right of the current window.
 
             map <leader>y "+y
             map <leader>s :w<CR>
-
+            imap jk <ESC>
 " Remove trailing space before saving
-        autocmd BufWritePre * %s/\s\+$//e
+        "autocmd BufWritePre * %s/\s\+$//e
 
 "open file at the lat position
 if has("autocmd")
@@ -110,10 +111,14 @@ let g:indentLine_char='¦'
 " Goyo
 nmap <leader>o :Goyo<CR>
 
+" Auto Save
+let g:auto_save = 1
+let g:auto_save_slient = 1
 
-
+"
+"
 " True color terminal support
-"set t_Co=256
+set t_Co=256
 set termguicolors
 if (empty($TMUX))
     if (has("termguicolors"))
@@ -127,6 +132,7 @@ colorscheme one
 "colorscheme equinusocio_material
 "colorscheme nord
 "colorscheme monokai
+"colorscheme kuroi
 "colorscheme dracula
 "set background=light
 set background=dark
@@ -137,7 +143,7 @@ let g:python_highlight_all = 1
 let g:python_highlight_space_errors = 0
 
 "GUI setting
-        set guifont=Monaco:h16
+        set guifont=Input\ Mono":h18
         set linespace=6
         "turn off the cursor blink
         set gcr=a:block-blinkon0
@@ -169,6 +175,8 @@ let g:python_highlight_space_errors = 0
                     exec '!python3 %'
                 elseif &filetype == 'tex'
                     exec '!xelatex %'
+                elseif &filetype == 'php'
+                    exec '!php %'
                 elseif &filetype == 'sh'
                     exec '!./%'
                 :endif
