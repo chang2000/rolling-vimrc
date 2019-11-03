@@ -1,5 +1,5 @@
 <h1 align="center" style="font-family:georgia">Rolling Vim Configuration</h1>
-<h4 align="center">Lightweighted, EASY to Deploy</h4>
+<h4 align="center">Lightweight and Easy to Deploy</h4>
 <hr/>
 <p align="center">
   <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Vimlogo.svg" width="250" height="250"/>
@@ -45,11 +45,11 @@ I use [vim-plug](https://github.com/junegunn/vim-plug) to manage pulgins(Vundle,
 
 * ~~[YCM](https://github.com/Valloric/YouCompleteMe), historic autocomplete plugins. I will show you the full installation later.~~
 
-  > YCM is highly demanding for users to learn. [coc.nvim](https://github.com/neoclide/coc.nvim) has easier installation and better default, which will save your life.
+* YCM is highly demanding for users to learn. [coc.nvim](https://github.com/neoclide/coc.nvim) has easier installation and better default, which will save your life. 
+  > To install coc.nvim, make sure you have node or node.js installed, refer to the coc repo above for details.
 
 * ~~[Vimtex](https://github.com/lervag/vimtex), LaTeX enhancement for LaTeX and Markdown~~
-  
-  > Editing LaTeX in Emacs or VS Code Now
+  > Vimtex is good with the help of Skim, a pdf viewer supports real-time sync. I prefer editing LaTeX by Emacs now.
   
 * [goyo](https://github.com/junegunn/goyo.vim), 🌷 Distraction-free writing in Vim
 
