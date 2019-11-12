@@ -31,15 +31,15 @@ call plug#begin('~/.vim/plugged')
         Plug 'octol/vim-cpp-enhanced-highlight'
         Plug 'wakatime/vim-wakatime'
         Plug 'jiangmiao/auto-pairs'
-        Plug 'neoclide/coc.nvim', {'branch': 'release'}
+        "Plug 'ycm-core/YouCompleteMe'
+        Plug 'zxqfl/tabnine-vim'
+        "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
         Plug 'arcticicestudio/nord-vim'
-        Plug 'dracula/vim', { 'as': 'dracula' }
-        Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
         Plug 'chuling/vim_equinusocio_material'
         Plug 'rakr/vim-one'
         Plug 'morhetz/gruvbox'
-
+        Plug 'liuchengxu/space-vim-theme'
 call plug#end()
 
 set fileencodings=utf-8
@@ -76,9 +76,7 @@ set splitright             " Open new windows right of the current window.
             :command Wq wq
             :command W w
             :command Q q
-
-            map <leader>y "+y
-            map <leader>s :w<CR>
+map <leader>y "+y map <leader>s :w<CR>
             imap jk <ESC>
 " Remove trailing space before saving
         "autocmd BufWritePre * %s/\s\+$//e
@@ -126,14 +124,15 @@ if (empty($TMUX))
     endif
 endif
 
-"colorscheme gruvbox
-colorscheme one
+colorscheme gruvbox
+"colorscheme one
 "colorscheme challenger_deep
 "colorscheme equinusocio_material
 "colorscheme nord
 "colorscheme monokai
 "colorscheme kuroi
 "colorscheme dracula
+"colorscheme space_vim_theme
 "set background=light
 set background=dark
 
@@ -143,7 +142,7 @@ let g:python_highlight_all = 1
 let g:python_highlight_space_errors = 0
 
 "GUI setting
-        set guifont=Input\ Mono":h18
+        set guifont=Iosevka\ Slab:h18
         set linespace=6
         "turn off the cursor blink
         set gcr=a:block-blinkon0
