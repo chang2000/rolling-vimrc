@@ -51,10 +51,12 @@ syntax on                  " Enable syntax highlighting
 syntax enable
 
 set nowrap                 " nobreak for a line of code
-set rnu
+set nu
+
 set autoindent             " Indent according to previous line.
 set expandtab              " Use spaces instead of tabs.
 set softtabstop =4         " Tab key indents by 4 spaces.
+set tabstop=4              " Tab key indents by 4 spaces
 set shiftwidth  =4         "  indents by 4 spaces.
 set shiftround             "  indents to next multiple of 'shiftwidth'.
 set display     =lastline  " Show as much as possible of the last line.
@@ -76,8 +78,9 @@ set splitright             " Open new windows right of the current window.
             :command Wq wq
             :command W w
             :command Q q
-map <leader>y "+y map <leader>s :w<CR>
-            imap jk <ESC>
+map <leader>y "+y 
+map <leader>s :w<CR>
+imap jk <ESC>
 " Remove trailing space before saving
         "autocmd BufWritePre * %s/\s\+$//e
 
@@ -124,11 +127,11 @@ if (empty($TMUX))
     endif
 endif
 
-colorscheme gruvbox
-"colorscheme one
+"colorscheme gruvbox
+"olorscheme one
 "colorscheme challenger_deep
 "colorscheme equinusocio_material
-"colorscheme nord
+colorscheme nord
 "colorscheme monokai
 "colorscheme kuroi
 "colorscheme dracula
