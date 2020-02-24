@@ -32,8 +32,8 @@ call plug#begin('~/.vim/plugged')
         Plug 'wakatime/vim-wakatime'
         Plug 'jiangmiao/auto-pairs'
         "Plug 'ycm-core/YouCompleteMe'
-        Plug 'zxqfl/tabnine-vim'
-        "Plug 'neoclide/coc.nvim', {'branch': 'release'}
+        "Plug 'zxqfl/tabnine-vim'
+        Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
         Plug 'arcticicestudio/nord-vim'
         Plug 'chuling/vim_equinusocio_material'
@@ -53,6 +53,7 @@ syntax enable
 set nowrap                 " nobreak for a line of code
 set nu
 
+set backspace=indent,eol,start
 set autoindent             " Indent according to previous line.
 set expandtab              " Use spaces instead of tabs.
 set softtabstop =4         " Tab key indents by 4 spaces.
