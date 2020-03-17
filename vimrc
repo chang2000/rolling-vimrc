@@ -3,9 +3,7 @@
 "| |   | |   | |   | || || || (____)|| |
 "( (   ) )   | |   | |(_)| ||     __)| |
 " \ \_/ /    | |   | |   | || (\ (   | |
-"  \   /  ___) (___| )   ( || ) \ \__| (____/\
-"   \_/   \_______/|/     \||/   \__/(_______/
-"
+"  \   /  ___) (___| )   ( || ) \ \__| (____/\ "   \_/   \_______/|/     \||/   \__/(_______/ "
 " ______              _______           _______  _        _______    _______  _______  _______  _______
 "(  ___ \ |\     /|  (  ____ \|\     /|(  ___  )( (    /|(  ____ \  / ___   )(  __   )(  __   )(  __   )
 "| (   ) )( \   / )  | (    \/| )   ( || (   ) ||  \  ( || (    \/  \/   )  || (  )  || (  )  || (  )  |
@@ -20,26 +18,26 @@ filetype off                  " required
 
 call plug#begin('~/.vim/plugged')
 
-        Plug 'scrooloose/nerdtree'
-        Plug 'Yggdroot/indentLine'
-        Plug 'scrooloose/nerdcommenter'
-        Plug 'vim-python/python-syntax'
-        Plug 'junegunn/goyo.vim'
-        "Plug 'ervandew/supertab'
-        "
-        Plug 'vim-scripts/vim-auto-save'
-        Plug 'octol/vim-cpp-enhanced-highlight'
-        Plug 'wakatime/vim-wakatime'
-        Plug 'jiangmiao/auto-pairs'
-        "Plug 'ycm-core/YouCompleteMe'
-        "Plug 'zxqfl/tabnine-vim'
-        Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'scrooloose/nerdtree'
+    Plug 'Yggdroot/indentLine'
+    Plug 'scrooloose/nerdcommenter'
+    Plug 'vim-python/python-syntax'
+    Plug 'junegunn/goyo.vim'
+    "Plug 'ervandew/supertab'
+    "
+    Plug 'vim-scripts/vim-auto-save'
+    Plug 'octol/vim-cpp-enhanced-highlight'
+    Plug 'wakatime/vim-wakatime'
+    Plug 'jiangmiao/auto-pairs'
+    "Plug 'ycm-core/YouCompleteMe'
+    "Plug 'zxqfl/tabnine-vim'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-        Plug 'arcticicestudio/nord-vim'
-        Plug 'chuling/vim_equinusocio_material'
-        Plug 'rakr/vim-one'
-        Plug 'morhetz/gruvbox'
-        Plug 'liuchengxu/space-vim-theme'
+    Plug 'arcticicestudio/nord-vim'
+    Plug 'chuling/vim_equinusocio_material'
+    Plug 'rakr/vim-one'
+    Plug 'morhetz/gruvbox'
+    Plug 'liuchengxu/space-vim-theme'
 call plug#end()
 
 set fileencodings=utf-8
@@ -73,17 +71,17 @@ set splitright             " Open new windows right of the current window.
 
 
 
-    " leader key related
-            let mapleader="\<Space>"
-            :command WQ wq
-            :command Wq wq
-            :command W w
-            :command Q q
+" leader key related
+    let mapleader="\<Space>"
+    :command WQ wq
+    :command Wq wq
+    :command W w
+    :command Q q
 map <leader>y "+y 
 map <leader>s :w<CR>
 imap jk <ESC>
 " Remove trailing space before saving
-        "autocmd BufWritePre * %s/\s\+$//e
+    "autocmd BufWritePre * %s/\s\+$//e
 
 "open file at the lat position
 if has("autocmd")
@@ -128,11 +126,11 @@ if (empty($TMUX))
     endif
 endif
 
-"colorscheme gruvbox
+colorscheme gruvbox
 "olorscheme one
 "colorscheme challenger_deep
 "colorscheme equinusocio_material
-colorscheme nord
+"colorscheme nord
 "colorscheme monokai
 "colorscheme kuroi
 "colorscheme dracula
