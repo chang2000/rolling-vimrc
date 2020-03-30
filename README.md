@@ -74,8 +74,9 @@ I use [vim-plug](https://github.com/junegunn/vim-plug) to manage pulgins(Vundle,
 * To Be continued...
 
 ## Features & Some vimscript
-* Emacs Cursor Moving Method under 
-	Use `C-f` and `C-b` to move cursor around, go and have a fluent experience when dealing with the parentheses of a function.
+* Emacs Cursor Moving Method under Insert Mode
+	
+	> Use `C-f` and `C-b` to move cursor around, go and have a fluent experience when dealing with the parentheses of a function.
 * QuickRun Support
 
 ``` vim
