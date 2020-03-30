@@ -30,6 +30,20 @@ This repository is devoted to customize an editor, which every function in it, l
 
 I will try to make it modulated later if I get some free time, and it's necessary for better management.
 
+
+
+# Updates
+
+**I switched to NeoVim!**
+
+But why?
+
+[Check it out](https://neovim.io/)
+
+All the reasons are iterally on the link above.
+
+And for me, the high performance and a better graphic experience are the rocking points.
+
 ## Architecture & Plugins:
 
 I use [vim-plug](https://github.com/junegunn/vim-plug) to manage pulgins(Vundle, another package manager, is kinda old and slow). Plugins I recommand:
@@ -46,16 +60,22 @@ I use [vim-plug](https://github.com/junegunn/vim-plug) to manage pulgins(Vundle,
 * ~~[YCM](https://github.com/Valloric/YouCompleteMe), historic autocomplete plugins. I will show you the full installation later.~~
 
 * YCM is highly demanding for users to learn. [coc.nvim](https://github.com/neoclide/coc.nvim) has easier installation and better default, which will save your life. 
-  > To install coc.nvim, make sure you have node or node.js installed, refer to the coc repo above for details.
+  
+> To install coc.nvim, make sure you have node or node.js installed, refer to the coc repo above for details.
 
 * ~~[Vimtex](https://github.com/lervag/vimtex), LaTeX enhancement for LaTeX and Markdown~~
+  
   > Vimtex is good with the help of Skim, a pdf viewer supports real-time sync. I prefer editing LaTeX by Emacs now.
   
 * [goyo](https://github.com/junegunn/goyo.vim), 🌷 Distraction-free writing in Vim
 
+* Vim-Bookmark
+
 * To Be continued...
 
 ## Features & Some vimscript
+* Emacs Cursor Moving Method under 
+	Use `C-f` and `C-b` to move cursor around, go and have a fluent experience when dealing with the parentheses of a function.
 * QuickRun Support
 
 ``` vim
