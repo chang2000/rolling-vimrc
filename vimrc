@@ -3,7 +3,8 @@
 "| |   | |   | |   | || || || (____)|| |
 "( (   ) )   | |   | |(_)| ||     __)| |
 " \ \_/ /    | |   | |   | || (\ (   | |
-"  \   /  ___) (___| )   ( || ) \ \__| (____/\ "   \_/   \_______/|/     \||/   \__/(_______/ "
+"  \   /  ___) (___| )   ( || ) \ \__| (____/\ 
+"   \_/   \_______/|/     \||/   \__/(_______/ "
 " ______              _______           _______  _        _______    _______  _______  _______  _______
 "(  ___ \ |\     /|  (  ____ \|\     /|(  ___  )( (    /|(  ____ \  / ___   )(  __   )(  __   )(  __   )
 "| (   ) )( \   / )  | (    \/| )   ( || (   ) ||  \  ( || (    \/  \/   )  || (  )  || (  )  || (  )  |
@@ -32,7 +33,8 @@ call plug#begin('~/.vim/plugged')
     "Plug 'ycm-core/YouCompleteMe'
     "Plug 'zxqfl/tabnine-vim'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
+    Plug 'tpope/vim-surround'
+    Plug 'airblade/vim-gitgutter'
     Plug 'arcticicestudio/nord-vim'
     Plug 'chuling/vim_equinusocio_material'
     Plug 'rakr/vim-one'
@@ -77,6 +79,8 @@ set splitright             " Open new windows right of the current window.
     :command Wq wq
     :command W w
     :command Q q
+
+" copy text to clipboard
 map <leader>y "+y 
 map <leader>s :w<CR>
 imap jk <ESC>
@@ -155,7 +159,8 @@ let g:python_highlight_space_errors = 0
         "turn of the toolbar and meau bar
         set guioptions-=m
         set guioptions-=T"
-
+" fold method
+        set foldmethod=marker
 " coc Autocompletion
     inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
     inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
