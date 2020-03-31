@@ -71,7 +71,7 @@ I use [vim-plug](https://github.com/junegunn/vim-plug) to manage pulgins(Vundle,
 
 * Vim-Bookmark
 
-* To Be continued...
+* To be continued...
 
 ## Features & Some vimscript
 * Emacs Cursor Moving Method under Insert Mode
@@ -101,10 +101,7 @@ I use [vim-plug](https://github.com/junegunn/vim-plug) to manage pulgins(Vundle,
 ```
 ## Tips:
 
-The main configuration file is actually `~/.vim/vimrc`, thus you'd better delete the `.vimrc` in in your home dictionary. Or, to make it safe, create a `vimrc` with only one line
-```bash
-source ~/.vim/virmc
-```
+The main configuration file is actually `~/nvim/init.vim`, thus you'd better delete the `.vimrc` in in your home dictionary. Refer to the Neovim site for more detailed information.
 
 
 
