@@ -13,7 +13,7 @@
 
 
 
-> 如果全世界的程序员能将折腾编辑器的时间减少一半，...
+> 如果全世界的程序员能将折腾编辑器的时间减少一半...
 >
 > If all the programmers can spend less time playing with editors...
 
@@ -32,7 +32,7 @@ I will try to make it modulated later if I get some free time, and it's necessar
 
 
 
-# Updates
+## Updates
 
 **I switched to NeoVim!**
 
@@ -46,9 +46,15 @@ And for me, the high performance and a better graphic experience are the rocking
 
 
 
-## Usage
+## Installation(tested on macOS)
 
-Back up your original Neovim configuration
+Install neovim(skip if you already done)
+
+```bash
+brew install neovim
+```
+
+Back up your original Neovim configuration(if you have one)
 
 ```bash
 mv ~/.config/nvim ~/.config/nvim.bak
