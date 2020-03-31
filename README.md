@@ -44,6 +44,26 @@ All the reasons are iterally on the link above.
 
 And for me, the high performance and a better graphic experience are the rocking points.
 
+
+
+## Usage
+
+Back up your original Neovim configuration
+
+```bash
+mv ~/.config/nvim ~/.config/nvim.bak
+```
+
+ Clone this repository
+
+```
+git clone https://https://github.com/chang2000/rolling-vimrc ~/.config/nvim
+```
+
+Use `nvim` to start neovim, then type `:PlugInstall` to install extensions.
+
+**Happy hacking!**
+
 ## Architecture & Plugins:
 
 I use [vim-plug](https://github.com/junegunn/vim-plug) to manage pulgins(Vundle, another package manager, is kinda old and slow). Plugins I recommand:
