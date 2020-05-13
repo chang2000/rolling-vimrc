@@ -4,7 +4,8 @@ filetype off
 call plug#begin('~/.vim/plugged')
     " Core completion extension
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
+    "Plug 'codota/tabnine-vim'
+    
     Plug 'scrooloose/nerdtree'
     Plug 'Yggdroot/indentLine'
     Plug 'scrooloose/nerdcommenter'
@@ -17,16 +18,20 @@ call plug#begin('~/.vim/plugged')
     Plug 'wakatime/vim-wakatime'
     Plug 'jiangmiao/auto-pairs'
     "Plug 'ycm-core/YouCompleteMe'
-    "Plug 'zxqfl/tabnine-vim'
     Plug 'tpope/vim-surround'
     Plug 'airblade/vim-gitgutter'
     Plug 'MattesGroeger/vim-bookmarks'
+    Plug 'cespare/vim-toml'
+
+    Plug 'leafgarland/typescript-vim'
+    Plug 'ianks/vim-tsx'
 
     Plug 'arcticicestudio/nord-vim'
     Plug 'chuling/vim_equinusocio_material'
     Plug 'rakr/vim-one'
     Plug 'morhetz/gruvbox'
     Plug 'liuchengxu/space-vim-theme'
+    Plug 'ayu-theme/ayu-vim'
 call plug#end()
 
 set fileencodings=utf-8
@@ -117,9 +122,11 @@ let g:auto_save_slient = 1
 " True color terminal support
 set t_Co=256
 set termguicolors
-
-colorscheme one
-set background=dark
+"colorscheme one set background=dark
+let ayucolor="light"  " for light version of theme
+let ayucolor="mirage" " for mirage version of theme
+let ayucolor="dark"   " for dark version of theme
+colorscheme ayu
 
 "Python Syntax Plus
 let g:python_highlight_all = 1
@@ -155,5 +162,10 @@ let g:bookmark_highlight_lines = 1
             exec '!php %'
         elseif &filetype == 'sh'
             exec '!./%'
+        elseif &filetype == 'javascript'
+            exec '!node %'
+        elseif &filetype == 'typescript'
+            exec '!tsc %'
+        
         :endif
     :endfunction
