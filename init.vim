@@ -15,7 +15,7 @@ call plug#begin('~/.vim/plugged')
     "
     Plug 'vim-scripts/vim-auto-save'
     Plug 'octol/vim-cpp-enhanced-highlight'
-    Plug 'wakatime/vim-wakatime'
+    "Plug 'wakatime/vim-wakatime'
     Plug 'jiangmiao/auto-pairs'
     "Plug 'ycm-core/YouCompleteMe'
     Plug 'tpope/vim-surround'
@@ -34,6 +34,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'ayu-theme/ayu-vim'
 call plug#end()
 
+let g:python3_host_prog = "/usr/local/bin/python3"
 set fileencodings=utf-8
 set termencoding=utf-8
 set encoding=utf-8
