@@ -11,13 +11,10 @@ call plug#begin('~/.vim/plugged')
     Plug 'scrooloose/nerdcommenter'
     Plug 'vim-python/python-syntax'
     Plug 'junegunn/goyo.vim'
-    "Plug 'ervandew/supertab'
-    "
+
     Plug 'vim-scripts/vim-auto-save'
     Plug 'octol/vim-cpp-enhanced-highlight'
-    "Plug 'wakatime/vim-wakatime'
     Plug 'jiangmiao/auto-pairs'
-    "Plug 'ycm-core/YouCompleteMe'
     Plug 'tpope/vim-surround'
     Plug 'airblade/vim-gitgutter'
     Plug 'MattesGroeger/vim-bookmarks'
@@ -35,6 +32,7 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 let g:python3_host_prog = "/usr/local/bin/python3"
+
 set fileencodings=utf-8
 set termencoding=utf-8
 set encoding=utf-8
@@ -112,8 +110,6 @@ nmap <leader>o :Goyo<CR>
 
 " Fold
 set foldmethod=syntax "syntax highlighting items specify folds
-"set foldcolumn=1 "defines 1 col at window left, to indicate folding
-"let javaScript_fold=1 "activate folding by JS syntax
 set foldlevelstart=99 "start file with all folds opened
 
 " Auto Save
@@ -123,6 +119,7 @@ let g:auto_save_slient = 1
 " True color terminal support
 set t_Co=256
 set termguicolors
+
 "colorscheme one set background=dark
 let ayucolor="light"  " for light version of theme
 let ayucolor="mirage" " for mirage version of theme
