@@ -31,6 +31,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'ayu-theme/ayu-vim'
 call plug#end()
 
+" set up the python version Vim is gonna use
 let g:python3_host_prog = "/usr/local/bin/python3"
 
 set fileencodings=utf-8
@@ -42,7 +43,7 @@ syntax on                  " Enable syntax highlighting
 syntax enable
 
 set nowrap                 " nobreak for a line of code
-set nu
+"set nu
 
 set backspace=indent,eol,start
 set autoindent             " Indent according to previous line.
@@ -63,11 +64,11 @@ set splitright             " Open new windows right of the current window.
 
 
 " leader key related
-    let mapleader="\<Space>"
-    :command WQ wq
-    :command Wq wq
-    :command W w
-    :command Q q
+let mapleader="\<Space>"
+:command WQ wq
+:command Wq wq
+:command W w
+:command Q q
 
 " copy text to clipboard
 map <leader>y "+y 
@@ -141,29 +142,29 @@ let g:bookmark_sign = '⚑'
 let g:bookmark_highlight_lines = 1
 
 " Quick Run
-    map <leader>r :call CompileRun()<CR>
-    func! CompileRun()
-        exec "w"
-        if &filetype == 'c'
-            exec '!gcc % -o %<'
-            exec '!time ./%<'
-            exec '!rm %<'
-        elseif &filetype == 'cpp'
-            exec '!g++ % -o %<'
-            exec '!time ./%<'
-            exec '!rm %'
-        elseif &filetype == 'python'
-            exec '!python3 %'
-        elseif &filetype == 'tex'
-            exec '!xelatex %'
-        elseif &filetype == 'php'
-            exec '!php %'
-        elseif &filetype == 'sh'
-            exec '!./%'
-        elseif &filetype == 'javascript'
-            exec '!node %'
-        elseif &filetype == 'typescript'
-            exec '!tsc %'
-        
-        :endif
-    :endfunction
+map <leader>r :call CompileRun()<CR>
+func! CompileRun()
+    exec "w"
+    if &filetype == 'c'
+        exec '!gcc % -o %<'
+        exec '!time ./%<'
+        exec '!rm %<'
+    elseif &filetype == 'cpp'
+        exec '!g++ % -o %<'
+        exec '!time ./%<'
+        exec '!rm %'
+    elseif &filetype == 'python'
+        exec '!python3 %'
+    elseif &filetype == 'tex'
+        exec '!xelatex %'
+    elseif &filetype == 'php'
+        exec '!php %'
+    elseif &filetype == 'sh'
+        exec '!./%'
+    elseif &filetype == 'javascript'
+        exec '!node %'
+    elseif &filetype == 'typescript'
+        exec '!tsc %'
+    
+    :endif
+:endfunction
