@@ -2,33 +2,28 @@ set nocompatible
 filetype off
 
 call plug#begin('~/.vim/plugged')
-    " Core completion extension
+    " Core completion extension 
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    "Plug 'codota/tabnine-vim'
-    
+
+    " Edit related
     Plug 'scrooloose/nerdtree'
     Plug 'Yggdroot/indentLine'
     Plug 'scrooloose/nerdcommenter'
     Plug 'vim-python/python-syntax'
-    Plug 'junegunn/goyo.vim'
-
     Plug 'vim-scripts/vim-auto-save'
-    Plug 'octol/vim-cpp-enhanced-highlight'
     Plug 'jiangmiao/auto-pairs'
     Plug 'tpope/vim-surround'
     Plug 'airblade/vim-gitgutter'
     Plug 'MattesGroeger/vim-bookmarks'
+
+    " Special Script Grammar enhancement
     Plug 'cespare/vim-toml'
-
-    Plug 'leafgarland/typescript-vim'
-    Plug 'ianks/vim-tsx'
-
-    Plug 'arcticicestudio/nord-vim'
-    Plug 'chuling/vim_equinusocio_material'
-    Plug 'rakr/vim-one'
-    Plug 'morhetz/gruvbox'
+    Plug 'dag/vim-fish'
+    " Color Scheme
     Plug 'liuchengxu/space-vim-theme'
-    Plug 'ayu-theme/ayu-vim'
+    Plug 'crusoexia/vim-monokai'
+
+    Plug 'wakatime/vim-wakatime'
 call plug#end()
 
 " set up the python version Vim is gonna use
@@ -79,7 +74,6 @@ imap jk <ESC>
 inoremap <C-F> <Right>
 inoremap <C-B> <Left>
 
-
 "open file at the lat position
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -110,7 +104,7 @@ let g:indentLine_char='¦'
 nmap <leader>o :Goyo<CR>
 
 " Fold
-set foldmethod=syntax "syntax highlighting items specify folds
+set foldmethod=indent "syntax highlighting items specify folds
 set foldlevelstart=99 "start file with all folds opened
 
 " Auto Save
@@ -122,10 +116,8 @@ set t_Co=256
 set termguicolors
 
 "colorscheme one set background=dark
-let ayucolor="light"  " for light version of theme
-let ayucolor="mirage" " for mirage version of theme
-let ayucolor="dark"   " for dark version of theme
-colorscheme ayu
+colorscheme monokai
+"colorscheme space_vim_theme
 
 "Python Syntax Plus
 let g:python_highlight_all = 1
@@ -165,6 +157,5 @@ func! CompileRun()
         exec '!node %'
     elseif &filetype == 'typescript'
         exec '!tsc %'
-    
     :endif
 :endfunction
