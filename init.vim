@@ -1,7 +1,7 @@
 set nocompatible
 filetype off
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('/plugged')
     " Core completion extension 
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -23,7 +23,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'crusoexia/vim-monokai'
     Plug 'NLKNguyen/papercolor-theme'
     Plug 'rakr/vim-one'
-
 call plug#end()
 
 " set up the python version Vim is gonna use
@@ -34,8 +33,9 @@ set termencoding=utf-8
 set encoding=utf-8
 
 filetype plugin indent on  " Load plugins according to detected filetype.
-syntax on                  " Enable syntax highlighting
-syntax enable
+if !exists("g:syntax_on") "Enable syntax
+    syntax enable
+endif
 
 set nowrap                 " nobreak for a line of code
 "set nu
