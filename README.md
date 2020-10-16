@@ -60,7 +60,16 @@ Back up your original Neovim configuration(if you have one)
 mv ~/.config/nvim ~/.config/nvim.bak
 ```
 
- Clone this repository
+
+
+Install [Plug](https://github.com/junegunn/vim-plug)
+
+```
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+```
+
+Clone this repository
 
 ```
 git clone https://https://github.com/chang2000/rolling-vimrc ~/.config/nvim
