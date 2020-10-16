@@ -18,12 +18,12 @@ call plug#begin('~/.vim/plugged')
 
     " Special Script Grammar enhancement
     Plug 'cespare/vim-toml'
-    Plug 'dag/vim-fish'
     " Color Scheme
     Plug 'liuchengxu/space-vim-theme'
     Plug 'crusoexia/vim-monokai'
+    Plug 'NLKNguyen/papercolor-theme'
+    Plug 'rakr/vim-one'
 
-    Plug 'wakatime/vim-wakatime'
 call plug#end()
 
 " set up the python version Vim is gonna use
@@ -115,9 +115,22 @@ let g:auto_save_slient = 1
 set t_Co=256
 set termguicolors
 
-"colorscheme one set background=dark
-colorscheme monokai
+set background=light
+colorscheme one 
+"colorscheme PaperColor
+"colorscheme monokai
 "colorscheme space_vim_theme
+"
+"
+"
+"For horizon color theme
+"colorscheme horizon
+ "lightline
+"let g:lightline = {}
+"let g:lightline.colorscheme = 'horizon'
+ "or this line
+"let g:lightline = {'colorscheme' : 'horizon'}
+
 
 "Python Syntax Plus
 let g:python_highlight_all = 1
