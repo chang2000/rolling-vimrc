@@ -1,7 +1,7 @@
 set nocompatible
 filetype off
 
-call plug#begin('/plugged')
+call plug#begin('~/.local/shared/nvim/plugged')
     " Core completion extension 
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
