@@ -133,3 +133,6 @@ let g:python_highlight_space_errors = 0
 "inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 "inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
+autocmd Filetype json
+    \ let g:indentLine_setConceal = 0 |
+    \ let g:vim_json_syntax_conceal = 0
